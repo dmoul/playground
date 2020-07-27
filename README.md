@@ -1,2 +1,2 @@
 # playground
-Playing to learn (and help others learn)
+Playing to learn (and maybe help others learn)
