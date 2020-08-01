@@ -1,9 +1,9 @@
 # playground
-Playing to learn (and maybe help others learn)
+*Playing to learn (and maybe help others learn)*
 
-https://github.com/dmoul/playground/blob/master/docs/monasteries.md
+[Cistercian and Franciscan monestaries in Europe opened 1000-1600](https://github.com/dmoul/playground/blob/master/docs/monasteries.md)
 
-https://github.com/dmoul/playground/blob/master/docs/rdu-weather.md
+[Weather at Raleigh-Durham International Airport 2011-2020](https://github.com/dmoul/playground/blob/master/docs/rdu-weather.md)
 
 https://github.com/dmoul/playground/blob/master/docs/mean-population-elevation.md
 
