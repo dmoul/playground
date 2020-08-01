@@ -1,14 +1,7 @@
 # playground
 *Playing to learn (and maybe help others learn)*
 
-
-
-
 [Cistercian and Franciscan monasteries in Europe that opened 1000-1600](https://github.com/dmoul/playground/blob/master/docs/monasteries.md)
-
-[Cistercian and Franciscan monestaries in Europe opened 1000-1600](https://github.com/dmoul/playground/blob/master/docs/monasteries.md)
-
-[Weather at Raleigh-Durham International Airport 2011-2020](https://github.com/dmoul/playground/blob/master/docs/rdu-weather.md)
 
 [Population shifts in the US 2010-2018](https://github.com/dmoul/playground/blob/master/docs/population-shift-2010-2018.md)
 
