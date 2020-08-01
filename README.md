@@ -7,4 +7,4 @@
 
 [Weather at Raleigh-Durham International Airport (RDU) 2011-2020](https://github.com/dmoul/playground/blob/master/docs/rdu-weather.md)
 
-[What is the average elevation of the US population above sea level?](https://github.com/dmoul/playground/blob/master/docs/mean-population-elevation.md)
+[What is the average elevation above sea level of the US population?](https://github.com/dmoul/playground/blob/master/docs/mean-population-elevation.md)
