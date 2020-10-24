@@ -1,7 +1,7 @@
 Mean Population Elevation in the Continental USA
 ================
 Daniel Moul
-2020-07-26
+2020-10-23
 
 <br>
 
@@ -14,7 +14,8 @@ following:
 
 1.  Calculate the mean elevation of each county
 2.  Get the population of each county
-3.  Calculate a weighted mean elevation based on the above
+3.  Calculate a weighted mean elevation for the country based on the
+    above
 
 <br>
 
@@ -92,43 +93,43 @@ mean\_elev\_in\_ft
 
 <td style="text-align:left;">
 
-IA
+AL
 
 </td>
 
 <td style="text-align:left;">
 
-19
+01
 
 </td>
 
 <td style="text-align:left;">
 
-Jackson
+Limestone
 
 </td>
 
 <td style="text-align:left;">
 
-097
+083
 
 </td>
 
 <td style="text-align:right;">
 
-41
+132
 
 </td>
 
 <td style="text-align:right;">
 
-232
+214
 
 </td>
 
 <td style="text-align:right;">
 
-763
+703
 
 </td>
 
@@ -138,43 +139,43 @@ Jackson
 
 <td style="text-align:left;">
 
-MN
+CO
 
 </td>
 
 <td style="text-align:left;">
+
+08
+
+</td>
+
+<td style="text-align:left;">
+
+Logan
+
+</td>
+
+<td style="text-align:left;">
+
+075
+
+</td>
+
+<td style="text-align:right;">
 
 27
 
 </td>
 
-<td style="text-align:left;">
+<td style="text-align:right;">
 
-Polk
-
-</td>
-
-<td style="text-align:left;">
-
-119
+1233
 
 </td>
 
 <td style="text-align:right;">
 
-56
-
-</td>
-
-<td style="text-align:right;">
-
-307
-
-</td>
-
-<td style="text-align:right;">
-
-1007
+4044
 
 </td>
 
@@ -184,43 +185,89 @@ Polk
 
 <td style="text-align:left;">
 
-MO
+IN
 
 </td>
 
 <td style="text-align:left;">
 
-29
+18
 
 </td>
 
 <td style="text-align:left;">
 
-Pemiscot
+Gibson
 
 </td>
 
 <td style="text-align:left;">
 
-155
+051
 
 </td>
 
 <td style="text-align:right;">
 
-71
+36
 
 </td>
 
 <td style="text-align:right;">
 
-80
+137
+
+</td>
+
+<td style="text-align:right;">
+
+448
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+KY
+
+</td>
+
+<td style="text-align:left;">
+
+21
+
+</td>
+
+<td style="text-align:left;">
+
+Adair
+
+</td>
+
+<td style="text-align:left;">
+
+001
+
+</td>
+
+<td style="text-align:right;">
+
+64
 
 </td>
 
 <td style="text-align:right;">
 
 264
+
+</td>
+
+<td style="text-align:right;">
+
+866
 
 </td>
 
@@ -242,31 +289,31 @@ MS
 
 <td style="text-align:left;">
 
-Smith
+Tate
 
 </td>
 
 <td style="text-align:left;">
 
-129
+137
 
 </td>
 
 <td style="text-align:right;">
 
-36
+30
 
 </td>
 
 <td style="text-align:right;">
 
-130
+98
 
 </td>
 
 <td style="text-align:right;">
 
-427
+320
 
 </td>
 
@@ -276,31 +323,117 @@ Smith
 
 <td style="text-align:left;">
 
-NC
+ND
 
 </td>
 
 <td style="text-align:left;">
 
-37
+38
 
 </td>
 
 <td style="text-align:left;">
 
-Pender
+Rolette
 
 </td>
 
 <td style="text-align:left;">
 
-141
+079
 
 </td>
 
 <td style="text-align:right;">
 
-72
+14
+
+</td>
+
+<td style="text-align:right;">
+
+546
+
+</td>
+
+<td style="text-align:right;">
+
+1790
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+OH
+
+</td>
+
+<td style="text-align:left;">
+
+39
+
+</td>
+
+<td style="text-align:left;">
+
+Mercer
+
+</td>
+
+<td style="text-align:left;">
+
+107
+
+</td>
+
+<td style="text-align:right;">
+
+69
+
+</td>
+
+<td style="text-align:right;">
+
+272
+
+</td>
+
+<td style="text-align:right;">
+
+893
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SD
+
+</td>
+
+<td style="text-align:left;">
+
+46
+
+</td>
+
+<td style="text-align:left;">
+
+Tripp
+
+</td>
+
+<td style="text-align:left;">
+
+123
 
 </td>
 
@@ -312,99 +445,13 @@ Pender
 
 <td style="text-align:right;">
 
-35
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-NC
-
-</td>
-
-<td style="text-align:left;">
-
-37
-
-</td>
-
-<td style="text-align:left;">
-
-Tyrrell
-
-</td>
-
-<td style="text-align:left;">
-
-177
+637
 
 </td>
 
 <td style="text-align:right;">
 
-19
-
-</td>
-
-<td style="text-align:right;">
-
-1
-
-</td>
-
-<td style="text-align:right;">
-
-3
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-PA
-
-</td>
-
-<td style="text-align:left;">
-
-42
-
-</td>
-
-<td style="text-align:left;">
-
-Butler
-
-</td>
-
-<td style="text-align:left;">
-
-019
-
-</td>
-
-<td style="text-align:right;">
-
-182
-
-</td>
-
-<td style="text-align:right;">
-
-366
-
-</td>
-
-<td style="text-align:right;">
-
-1202
+2091
 
 </td>
 
@@ -472,13 +519,13 @@ TX
 
 <td style="text-align:left;">
 
-Gray
+Moore
 
 </td>
 
 <td style="text-align:left;">
 
-179
+341
 
 </td>
 
@@ -490,59 +537,13 @@ Gray
 
 <td style="text-align:right;">
 
-920
+1102
 
 </td>
 
 <td style="text-align:right;">
 
-3017
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-WV
-
-</td>
-
-<td style="text-align:left;">
-
-54
-
-</td>
-
-<td style="text-align:left;">
-
-Monongalia
-
-</td>
-
-<td style="text-align:left;">
-
-061
-
-</td>
-
-<td style="text-align:right;">
-
-123
-
-</td>
-
-<td style="text-align:right;">
-
-327
-
-</td>
-
-<td style="text-align:right;">
-
-1072
+3616
 
 </td>
 
@@ -588,6 +589,23 @@ the mean, however they are not included in the plot below.
 
 <br>
 
+Most people live in the green counties (below 1000 ft elevation).
+
+<br>
+
+<img src="mean-population-elevation_files/figure-gfm/unnamed-chunk-14-1.png" width="100%" />
+
+<br>
+
+<br>
+
+Three states (AZ, CA, CO) have a range of more than a mile in elevation
+between the lowest and highest mean county elevations.
+
+<br>
+
+<img src="mean-population-elevation_files/figure-gfm/unnamed-chunk-16-1.png" width="100%" />
+
 <br>
 
 ## 4\. Notes
@@ -600,11 +618,11 @@ Dakota where it’s relatively flat.
 
 <br>
 
-<img src="mean-population-elevation_files/figure-gfm/unnamed-chunk-17-1.png" width="100%" />
+<img src="mean-population-elevation_files/figure-gfm/unnamed-chunk-18-1.png" width="100%" />
 
 <br>
 
-<img src="mean-population-elevation_files/figure-gfm/unnamed-chunk-18-1.png" width="100%" />
+<img src="mean-population-elevation_files/figure-gfm/unnamed-chunk-19-1.png" width="100%" />
 
 <br> <br>
 

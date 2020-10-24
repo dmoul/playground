@@ -13,7 +13,7 @@ The continental United States has vast flat plains and long mountain ranges. But
 
 1. Calculate the mean elevation of each county
 1. Get the population of each county
-1. Calculate a weighted mean elevation based on the above
+1. Calculate a weighted mean elevation for the country based on the above
 
 ```{r include=FALSE}
 library(tidyverse)
@@ -34,8 +34,10 @@ library(tigris)
 library(hrbrthemes)
 
 
-knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
-options(tigris_use_cache = TRUE)
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE,
+                      fig.retina = 3)
+options(tigris_use_cache = TRUE,
+        dplyr.summarise.inform = FALSE)
 
 # for histograms
 theme_set(theme_ipsum_ps())
@@ -167,7 +169,7 @@ I downloaded county-level population estimates from ACS 2014-2018 via the Census
 <br>
 
 ```{r}
-#d ata from 
+# data from 
 # * https://api.census.gov/data/2010/dec/sf1/examples.html
 # * https://api.census.gov/data/2010/dec/sf1?get=P001001,NAME&for=county:*&in=state:*
 
@@ -284,12 +286,41 @@ us_counties48 %>%
           fill = NA, color = "slategrey", alpha = 1.0, size = 0.3) + # draw state borders too
   coord_sf(crs = my_crs) +
   scale_fill_manual(values = my_break_colors) +
-  #theme_minimal() +
+  theme(plot.title.position = "plot",
+        plot.margin = unit(c(10, 0, 5, 0), "mm")) +
   labs(title = "Population mean elevation in the continental US",
        subtitle = glue("County-level mean elevations based on USGS 'populated places' data"),
        x = "", y = "",
        fill = "Elevation (ft)",
        caption = my_map_caption)
+
+```
+
+<br>
+
+Most people live in the green counties (below 1000 ft elevation).
+
+<br>
+
+```{r out.width="100%"}
+d2 %>%
+  filter(population > 0) %>%
+  ggplot(aes(population, mean_elev_in_ft)) +
+  geom_hex() +
+  scale_y_continuous(labels = label_number_si(accuracy = 1),
+                     breaks = 0:5 * 2000) +
+  scale_x_log10(labels = label_number_si()) +
+  scale_fill_continuous(trans = "log10",
+                        low = "darkgrey", high =  "#FFFEC8") + # "#E1B759" "steelblue" "132B43"   "#99d8c9"
+  annotation_logticks(sides = "b", alpha = 0.4, size = 0.3) +
+  theme(panel.grid.minor = element_blank(),
+        ) +
+  labs(title = "Mean elevation by county population",
+       subtitle = glue("Continental 48 states; {comma(nrow(distinct(d2, county_numeric, state_numeric)))} counties"),
+       y = "County mean elevation (ft)",
+       x = "County population (log10 scale)",
+       fill = "n counties\n(log10)",
+       caption = my_plot_caption)
 
 ```
 
@@ -311,8 +342,13 @@ d_variation <- d %>%
   
 ```
 
+<br>
 
-```{r out.width="100%", eval=FALSE}
+Three states (AZ, CA, CO) have a range of more than a mile in elevation between the lowest and highest mean county elevations.
+
+<br>
+
+```{r out.width="100%"}
 d_variation %>%
   select(state_alpha, ends_with(c("_in_ft", "in_ft_scaled"))) %>%
   pivot_longer(cols = ends_with(c("_in_ft", "in_ft_scaled")),
@@ -321,8 +357,8 @@ d_variation %>%
   filter(!str_detect(metric, "scaled|pct")) %>% # take them out for now
   ggplot(aes(value)) +
   geom_histogram(bins = 10) + 
-  #scale_x_log10(labels = label_number_si(), breaks = 10^(0:3)) + #
   facet_wrap(~metric, scales = "free_x") +
+  theme(strip.text = element_text(size = 10)) +
   labs(title = "Metrics re: mean county population elevation",
        subtitle = "By state",
        y = "Number of states",
@@ -370,7 +406,8 @@ ggplot() +
   geom_sf(data = st_geometry(us_states48_20m), fill = NA, color = "slategrey", alpha = 1.0, size = 0.3) + # draw state borders too
   coord_sf(crs = my_crs) +
   scale_fill_manual(values = my_break_colors) +
-  #theme_minimal() +
+  theme(plot.title.position = "plot",
+        plot.margin = unit(c(10, 0, 5, 0), "mm")) +
   labs(title = "Number of populated places in each county",
        subtitle = glue("Used to calculate county-level population mean elevations"),
        x = "", y = "",
